@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script>
+        new Vue({
+            el: "#app",
+            template: "<p>{{name}}</p>",
+
+            data() {
+                return {
+                    name: "ola, bom dia"
+                }
+            },
+
+            methods: {
+
+            },
+
+            watch: {
+
+            },
+
+            computed: {
+
+            },
+
+            beforeCreate() {
+                 console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            created() {
+                 console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            beforeMount() {
+                 console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            mounted() {
+                 console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            beforeUpdate() {
+                console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            updated() {
+                console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            beforeUnmont() {
+                console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            },
+
+            unmonted() {
+                console.log('beforeCreate');
+                 console.log('Estado:', this.name);
+                 console.log('DOM:', this.$el);
+            }
+        })
+    </script>
+</html>

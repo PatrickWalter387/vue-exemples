@@ -1,15 +1,45 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld v-if="visivel" v-bind:msg="nome"/>
+  <p v-else>OLA MUNDO</p>
+
+  <input type="text" v-model="comentario" v-on:change="() => console.log(comentario)" />
+  <button v-on:click="() => postarComentario()">Click</button>
+
+  <CompComentario :msg="mensagem" v-for="(mensagem, index) in comentarios" :key="index" />
+
+  <h3>Total de mensagens: {{totalComentarios()}} mensagens</h3>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import CompComentario from './components/CompComentario.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    CompComentario
+  },
+  
+  data() {
+    return {
+      nome: "Patrick",
+      visivel: true,
+      comentario: "",
+      comentarios: []
+    }
+  },
+
+  methods: {
+    postarComentario() {
+      this.comentarios.push(this.comentario);
+      this.comentario = "";
+    },
+
+    totalComentarios() {
+      return this.comentarios.length;
+    }
   }
 }
 </script>
